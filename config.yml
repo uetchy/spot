@@ -1,0 +1,67 @@
+rbenv:
+  backup:
+    - '~/.rbenv/default-gems'
+go:
+  backup_script: 'tree ~/.go > {{destination}} 2>&1'
+Karabiner:
+  backup: '~/Library/Application Support/Karabiner/private.xml'
+workflows:
+  backup: '~/Library/Services'
+config:
+  backup: '~/.config'
+gemrc:
+  backup: '~/.gemrc'
+dockercfg:
+  backup: '~/.dockercfg'
+zshrc:
+  backup: '~/.zshrc'
+zshd:
+  backup: '~/.zsh.d'
+vimrc:
+  backup: '~/.vimrc'
+pryrc:
+  backup: '~/.pryrc'
+netrc:
+  backup: '~/.netrc'
+npmrc:
+  backup: '~/.npmrc'
+pearrc:
+  backup: '~/.pearrc'
+tmuxconf:
+  backup: '~/.tmux.conf'
+gitconfig:
+  backup: '~/.gitconfig'
+gitignore_global:
+  backup: '~/.gitignore_global'
+gituser:
+  backup: '~/.gituser'
+railsrc:
+  backup: '~/.railsrc'
+haxelib:
+  backup: '~/.haxelib'
+ssh:
+  backup: '~/.ssh'
+QuickLook:
+  backup: '~/Library/QuickLook'
+hosts:
+  backup: '/etc/hosts'
+ppp:
+  backup: '/etc/ppp/ip-up'
+  restore: 'chmod 744 /etc/ppp/ip-up'
+Applications:
+  backup_script: 'ls -1 /Applications > {{destination}}'
+homebrew:
+  backup_script:
+    - 'brew list > {{destination}} 2>&1'
+    - 'brew tap > {{destination}} 2>&1'
+    - 'brew cask list > {{destination}} 2>&1'
+npm:
+  backup_script: 'npm list -g --depth 0 --loglevel warn > {{destination}}'
+pip:
+  backup_script: 'pip freeze > {{destination}} 2>&1'
+haxelib:
+  backup_script: 'haxelib list > {{destination}} 2>&1'
+rubygems:
+  backup_script: 'gem list > {{destination}} 2>&1'
+vagrant-plugins:
+  backup_script: 'vagrant plugin list > {{destination}} 2>&1'

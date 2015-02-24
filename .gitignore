@@ -1,0 +1,6 @@
+Gemfile.lock
+.bundle
+/vendor/bundle
+
+# backup directories
+/backups
